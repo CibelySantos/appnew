@@ -1,4 +1,5 @@
-// Cibely Cristiny dos Santos
+//Cibely, Júlia Fortunato, Luiz Gustavo
+
 
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';

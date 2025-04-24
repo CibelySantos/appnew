@@ -1,4 +1,5 @@
-// Cibely, Júlia e Luiz
+//Cibely, Júlia Fortunato, Luiz Gustavo
+
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';

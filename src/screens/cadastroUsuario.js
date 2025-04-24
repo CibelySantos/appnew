@@ -1,3 +1,4 @@
+//Cibely, Júlia Fortunato, Luiz Gustavo
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet, ImageBackground, ScrollView } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';

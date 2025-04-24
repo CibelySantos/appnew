@@ -1,3 +1,4 @@
+//Cibely, Júlia Fortunato, Luiz Gustavo
 import React, { useState, useEffect } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity,
@@ -81,6 +82,14 @@ export default function EditarPerfil({ navigation }) {
   return (
     <ImageBackground source={backgroundImage} style={styles.background}>
       <ScrollView contentContainerStyle={styles.overlay}>
+        {/* Botão de Voltar */}
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigation.navigate('PaginaPrincipal')}
+        >
+          <Text style={styles.backButtonText}>← Voltar à Página Inicial</Text>
+        </TouchableOpacity>
+
         <Text style={styles.helloText}>Olá, {nome || 'usuário'} </Text>
 
         {novaImagemUri || fotoUrl ? (
@@ -134,6 +143,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexGrow: 1,
     justifyContent: 'center',
+  },
+  backButton: {
+    alignSelf: 'flex-start',
+    marginBottom: 20,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    backgroundColor: '#3e2450',
+    borderRadius: 6,
+  },
+  backButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 14,
   },
   helloText: {
     fontSize: 22,

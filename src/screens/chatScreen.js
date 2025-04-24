@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, TextInput, Button, FlatList, Text, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import { collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import { useNavigation } from '@react-navigation/native';
 import app from '../../firebaseConfig';
 
 export default function ChatScreen() {
@@ -11,6 +12,7 @@ export default function ChatScreen() {
   const auth = getAuth(app);
   const firestore = getFirestore(app);
   const user = auth.currentUser;
+  const navigation = useNavigation();
 
   useEffect(() => {
     const messagesRef = collection(firestore, 'messages');
@@ -53,6 +55,11 @@ export default function ChatScreen() {
       behavior={Platform.OS === "ios" ? "padding" : undefined}
       keyboardVerticalOffset={90}
     >
+      {/* Botão de Voltar */}
+      <View style={styles.backButtonContainer}>
+        <Button title="Voltar à Página Inicial" onPress={() => navigation.navigate('PaginaPrincipal')} />
+      </View>
+
       <FlatList
         inverted
         data={messages}
@@ -81,6 +88,9 @@ export default function ChatScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 10, backgroundColor: '#0e2349' },
+  backButtonContainer: {
+    marginBottom: 10,
+  },
   messageContainer: {
     marginVertical: 5,
     padding: 10,

@@ -1,3 +1,5 @@
+//Cibely, Júlia Fortunato, Luiz Gustavo
+
 import React, { useEffect } from 'react';
 import { View, StyleSheet, Animated, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
