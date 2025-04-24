@@ -5,7 +5,7 @@ import { View, Button, Image, ActivityIndicator, StyleSheet, TouchableOpacity, T
 import * as ImagePicker from 'expo-image-picker';
 import s3 from '../../awsConfig';
 
-const bucket = "bucket-storage-senai-03";
+const bucket = "bucket-storage-senai-14";
 
 export default function UploadImageScreen({ navigation }) {
   const [image, setImage] = useState(null);

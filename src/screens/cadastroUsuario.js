@@ -1,5 +1,3 @@
-// Cibely Cristiny dos Santos
-
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, Alert, StyleSheet, ImageBackground, ScrollView } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
@@ -7,20 +5,13 @@ import { auth, db } from '../../firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { addDoc, collection } from 'firebase/firestore';
 
-const backgroundImage = require('../assets/backgroundlogin.png');
+const backgroundImage = require('../assets/fundoBranco.png');
 
 export default function CadastroUsuario({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [nome, setNome] = useState('');
-  const [image, setImage] = useState(null);
 
-  const pickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync();
-    if (!result.canceled) {
-      setImage(result.assets[0].uri);
-    }
-  };
 
   const registerUser = async () => {
     if (!email || !senha || !nome) {
@@ -36,7 +27,6 @@ export default function CadastroUsuario({ navigation }) {
         uid: user.uid,
         nome,
         email,
-        foto: image || '',
       });
 
       Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
@@ -77,12 +67,6 @@ export default function CadastroUsuario({ navigation }) {
           secureTextEntry
         />
 
-        <TouchableOpacity style={styles.button} onPress={pickImage}>
-          <Text style={styles.buttonText}>Escolher Imagem</Text>
-        </TouchableOpacity>
-
-        {image && <Image source={{ uri: image }} style={styles.image} />}
-
         <TouchableOpacity style={styles.button} onPress={registerUser}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
@@ -108,13 +92,13 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: 'rgba(196, 196, 196, 0.28)',
     flexGrow: 1,
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
     marginBottom: 20,
   },
   input: {
@@ -126,10 +110,10 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     paddingLeft: 10,
     color: 'white',
-    backgroundColor: 'rgba(28, 61, 114, 0.9)',
+    backgroundColor: 'rgba(99, 32, 109, 0.5)',
   },
   button: {
-    backgroundColor: '#1c3d72',
+    backgroundColor: 'rgba(99, 32, 109, 0.59)',
     padding: 15,
     borderRadius: 10,
     width: '100%',
@@ -146,9 +130,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonSecondaryText: {
-    color: '#ccc',
+    color: 'black',
     fontSize: 16,
-    textDecorationLine: 'underline',
   },
   image: {
     width: 100,

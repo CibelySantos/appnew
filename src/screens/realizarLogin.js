@@ -1,11 +1,12 @@
-// Cibely Cristiny dos Santos
+// Cibely, Júlia e Luiz
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import app from '../../firebaseConfig';
 
 const backgroundImage = require('../assets/fundoBranco.png');
+const logo = require('../assets/LogoPC.png'); // Adicione sua logo nessa pasta
 
 const RealizarLogin = ({ navigation }) => {
     const [email, setEmail] = useState('');
@@ -24,12 +25,13 @@ const RealizarLogin = ({ navigation }) => {
 
     return (
         <ImageBackground source={backgroundImage} style={styles.background}>
-            <View style={styles.container}>
-                <Text style={styles.title}>Login</Text>
+            <View style={styles.overlay}>
+                <Image source={logo} style={styles.logo} />
+                <Text style={styles.text}>Login</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Email"
-                    placeholderTextColor="#ccc"
+                    placeholderTextColor="#999"
                     value={email}
                     onChangeText={setEmail}
                     keyboardType="email-address"
@@ -38,21 +40,17 @@ const RealizarLogin = ({ navigation }) => {
                 <TextInput
                     style={styles.input}
                     placeholder="Senha"
-                    placeholderTextColor="#ccc"
+                    placeholderTextColor="#999"
                     value={password}
                     onChangeText={setPassword}
                     secureTextEntry
                 />
-                <TouchableOpacity style={styles.button} onPress={tentarLogar}>
-                    <Text style={styles.buttonText}>Entrar</Text>
+                <TouchableOpacity style={styles.botao} onPress={tentarLogar}>
+                    <Text style={styles.botaoText}>Entrar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity 
-                    style={styles.buttonSecondary} 
-                    onPress={() => navigation.navigate('CadastroUsuario')} 
-                    activeOpacity={0.7}
-                >
-                    <Text style={styles.buttonSecondaryText}>Não tem uma conta? Cadastre-se.</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('CadastroUsuario')}>
+                    <Text style={styles.linkText}>Não tem uma conta? Cadastre-se.</Text>
                 </TouchableOpacity>
             </View>
         </ImageBackground>
@@ -62,54 +60,54 @@ const RealizarLogin = ({ navigation }) => {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        resizeMode: 'cover',
-        justifyContent: 'center',
-    },
-    container: {
-        flex: 1,
+        width: '100%',
+        height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20,
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',    
     },
-    title: {
-        fontSize: 28,
+    overlay: {
+        backgroundColor: 'rgba(71, 29, 69, 0.5)',
+        padding: 20,
+        borderRadius: 10,
+        width: '80%',
+        alignItems: 'center',
+    },
+    logo: {
+        width: 90,
+        height: 90,
+        marginBottom: 10,
+    },
+    text: {
+        fontSize: 20,
         fontWeight: 'bold',
         color: 'white',
         marginBottom: 20,
     },
     input: {
         width: '100%',
-        height: 50,
-        borderWidth: 1,
-        borderColor: '#1c3d72', 
-        borderRadius: 10,
-        marginBottom: 15,
-        paddingLeft: 10,
-        color: 'white',
-        backgroundColor: 'rgba(28, 61, 114, 0.9)', 
-    },
-    button: {
-        backgroundColor: '#1c3d72', 
-        padding: 15,
-        borderRadius: 10,
-        width: '100%',
-        alignItems: 'center',
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-    buttonSecondary: {
-        marginTop: 15,
         padding: 10,
+        marginBottom: 10,
+        borderWidth: 2,
+        borderColor: 'rgba(83, 83, 83, 0.5)',
+        borderRadius: 5,
+        backgroundColor: 'white',
+    },
+    botao: {
+        backgroundColor: 'rgba(63, 26, 57, 0.5)',
+        paddingVertical: 12,
+        paddingHorizontal: 30,
+        borderRadius: 8,
+        marginTop: 10,
         alignItems: 'center',
     },
-    buttonSecondaryText: {
-        color: '#ccc',
+    botaoText: {
+        color: 'white',
         fontSize: 16,
-        textDecorationLine: 'underline',
+    },
+    linkText: {
+        color: 'white',
+        marginTop: 15,
+        fontSize: 14,
     },
 });
 
