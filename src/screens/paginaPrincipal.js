@@ -18,7 +18,7 @@ export default function Stack({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat')}>
-          <Text style={styles.buttonText}>Feed</Text>
+          <Text style={styles.buttonText}>Chat</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Post')}>

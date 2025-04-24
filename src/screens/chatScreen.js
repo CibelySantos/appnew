@@ -1,37 +1,50 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import app from '../../firebaseConfig';
 
 export default function ChatScreen() {
-  const [messages, setMessages] = useState([
-    { id: '1', text: 'E aí! Tudo certo?', sender: 'João', senderId: 'joao123' },
-    { id: '2', text: 'Tudo sim! E você?', sender: 'Maria', senderId: 'maria456' },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [user, setUser] = useState(null);
   const flatListRef = useRef(null);
 
-  // Usuário atual (quem tá usando o app)
-  const currentUser = { id: 'user123', name: 'Você' };
+  useEffect(() => {
+    const auth = getAuth(app);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser({
+          id: currentUser.uid,
+          name: currentUser.displayName || currentUser.email,
+        });
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const sendMessage = () => {
-    if (!input.trim()) return;
+    if (!input.trim() || !user) return;
 
     const newMessage = {
       id: String(Date.now()),
       text: input,
-      sender: currentUser.name,
-      senderId: currentUser.id,
+      sender: user.name,
+      senderId: user.id,
     };
 
-    setMessages(prev => [...prev, newMessage]);
+    setMessages((prev) => [...prev, newMessage]);
     setInput('');
     flatListRef.current?.scrollToEnd({ animated: true });
   };
 
   const renderItem = ({ item }) => (
-    <View style={[
-      styles.message,
-      item.senderId === currentUser.id ? styles.user : styles.other
-    ]}>
+    <View
+      style={[
+        styles.message,
+        item.senderId === user?.id ? styles.user : styles.other,
+      ]}
+    >
       <Text style={styles.senderName}>{item.sender}</Text>
       <Text style={styles.messageText}>{item.text}</Text>
     </View>
