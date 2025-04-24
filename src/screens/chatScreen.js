@@ -1,29 +1,16 @@
-// ChatApp.js
-import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function ChatScreen() {
   const [messages, setMessages] = useState([
-    { id: '1', text: 'E aí! Tudo certo?', sender: 'bot' },
+    { id: '1', text: 'E aí! Tudo certo?', sender: 'João', senderId: 'joao123' },
+    { id: '2', text: 'Tudo sim! E você?', sender: 'Maria', senderId: 'maria456' },
   ]);
   const [input, setInput] = useState('');
-  const [newMessageAlert, setNewMessageAlert] = useState(false);
   const flatListRef = useRef(null);
 
-  // Simular recebimento de mensagem a cada 10s
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newBotMessage = {
-        id: String(Date.now()),
-        text: 'Mensagem automática recebida! 📩',
-        sender: 'bot',
-      };
-      setMessages(prev => [...prev, newBotMessage]);
-      setNewMessageAlert(true);
-    }, 10000); // a cada 10 segundos
-
-    return () => clearInterval(interval);
-  }, []);
+  // Usuário atual (quem tá usando o app)
+  const currentUser = { id: 'user123', name: 'Você' };
 
   const sendMessage = () => {
     if (!input.trim()) return;
@@ -31,28 +18,28 @@ export default function ChatScreen() {
     const newMessage = {
       id: String(Date.now()),
       text: input,
-      sender: 'user',
+      sender: currentUser.name,
+      senderId: currentUser.id,
     };
 
     setMessages(prev => [...prev, newMessage]);
     setInput('');
-    setNewMessageAlert(false); // apagamos alerta ao enviar
     flatListRef.current?.scrollToEnd({ animated: true });
   };
 
   const renderItem = ({ item }) => (
-    <View style={[styles.message, item.sender === 'user' ? styles.user : styles.bot]}>
+    <View style={[
+      styles.message,
+      item.senderId === currentUser.id ? styles.user : styles.other
+    ]}>
+      <Text style={styles.senderName}>{item.sender}</Text>
       <Text style={styles.messageText}>{item.text}</Text>
     </View>
   );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>💬 ChatApp</Text>
-
-      {newMessageAlert && (
-        <Text style={styles.alertText}>🔔 Nova mensagem recebida!</Text>
-      )}
+      <Text style={styles.title}>💬 Chat de Grupo</Text>
 
       <FlatList
         data={messages}
@@ -93,11 +80,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#DCF8C6',
     alignSelf: 'flex-end',
   },
-  bot: {
+  other: {
     backgroundColor: '#E2E3E5',
     alignSelf: 'flex-start',
   },
   messageText: { fontSize: 16 },
+  senderName: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#555',
+    marginBottom: 2,
+  },
   inputArea: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -115,10 +108,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   sendText: { color: '#fff', fontWeight: 'bold' },
-  alertText: {
-    textAlign: 'center',
-    color: 'red',
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
 });
