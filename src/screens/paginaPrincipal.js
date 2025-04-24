@@ -13,40 +13,16 @@ export default function Stack({ navigation }) {
       <View style={styles.overlay}>
         <Text style={styles.title}>Seja bem-vindo(a) ao nosso aplicativo!</Text>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('SobreNos')}>
-          <Text style={styles.buttonText}>Sobre nós</Text>
-        </TouchableOpacity>
-
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditarPerfil')}>
           <Text style={styles.buttonText}>Editar perfil</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ListarJogadores')}>
-          <Text style={styles.buttonText}>Lista de jogadores</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat')}>
+          <Text style={styles.buttonText}>Chat</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AcenderLampada')}>
-          <Text style={styles.buttonText}>Lâmpada</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CalcularIMC')}>
-          <Text style={styles.buttonText}>Calcule seu IMC</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('UploadImag')}>
-          <Text style={styles.buttonText}>Upload de imagens</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('UploadVideo')}>
-          <Text style={styles.buttonText}>Upload de vídeos</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('listarVideo')}>
-          <Text style={styles.buttonText}>Lista de vídeos</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ListarImag')}>
-          <Text style={styles.buttonText}>Lista de imagens</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Post')}>
+          <Text style={styles.buttonText}>Feed</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
