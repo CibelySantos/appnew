@@ -6,7 +6,6 @@ import PaginaPrincipal from './src/screens/paginaPrincipal';
 import EditarPerfil from './src/screens/editarPerfil';
 import CadastroUsuario from './src/screens/cadastroUsuario';
 import SplashScreen from './src/screens/splashScreen';
-import Server from './src/screens/server';
 import ChatScreen from './src/screens/chatScreen';
 import Chat from './src/screens/chat';
 import Post from './src/screens/post';
@@ -21,7 +20,6 @@ const app = () => (
       <Stack.Screen name="EditarPerfil" component={EditarPerfil} options={{ headerShown: false }}/>
       <Stack.Screen name="CadastroUsuario" component={CadastroUsuario} options={{ headerShown: false }}/>
       <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Server" component={Server} options={{ headerShown: false }} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Chat" component={Chat} options={{ headerShown: false }} />
       <Stack.Screen name="Post" component={Post} options={{ headerShown: false }} />
