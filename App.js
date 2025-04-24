@@ -16,6 +16,7 @@ import CadastroUsuario from './src/screens/cadastroUsuario';
 import SplashScreen from './src/screens/splashScreen';
 import Server from './src/screens/server';
 import ChatScreen from './src/screens/chatScreen';
+import Post from './src/screens/post';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +38,7 @@ const app = () => (
       <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Server" component={Server} options={{ headerShown: false }} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Post" component={Post} options={{ headerShown: false }} />
     </Stack.Navigator>
   </NavigationContainer>
 );

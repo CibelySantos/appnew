@@ -1,12 +1,11 @@
-// Cibely Cristiny dos Santos
-
+// awsConfig.js
 import AWS from 'aws-sdk';
 
 const s3 = new AWS.S3({
-  accessKeyId: 'ASIAV3QTLJ64R4UONWKJ',
-  secretAccessKey: 'fKds6oZ1YV4fWo6rcLbLyThKfQcxK4YJglbQlQBl',
-  sessionToken: 'IQoJb3JpZ2luX2VjENP//////////wEaCXVzLXdlc3QtMiJGMEQCIEAVx/P7bF2Xg826oEZSpZmx8c9Sg3/uwx9/5lb61qbxAiA7oT1XOL0k/Hie0wG3AfDMyNDSoDBHMlscOegHflqYIyq2AghcEAEaDDQwMjY5Mzc3MTE5MyIMyAlXKxvJ0OvbEXR7KpMCHEa5XMPLfpYPRMPeEnveQxzUqn+DqhN4NHKweL+O3Q3qf/h3gBprAJ7DNUK5/7ai3vKDItIQBPDO6dW+ETC62u6ssC/yfEOm9jOK7sNYfaTODBAdDY3c56+B6hn1eXHPXVOrQpFOPVkepS34fRIRJydwNHoxkQ85744+WG7rdgowXj+dL4pe1yQzr4SnN2bTGH2fg34szZbFjHmZgkUEFNwtK4C8w/yffAEsqHRdW846UE03SSeYc6xY4SXN8RXGWSZb8JcQ8tT3UaKacgjeMCBuuZ0GPa70TLu5uQkAnZfmhofdQnFzpJhg4Jss8GlP9owd9N3FxhnaOX+woU9IE44bkabWP7qx2fXrRBWq+A+RgZgwr7uDwAY6ngFb9b4yFph9q5j2ZcS4tI8Pzu0I1bAlW73xCZqH0WMsT231rD/RJjEFh+hGhpf/Rj5OMY2Z2AeBrVXjXYNMeitbJuom71GJSTnbiDoKsstx1jebNo6XRN84L+fjC1B6P+RrIydrDcOo0eANA7ceeP6egOrbexORoY89q3dJAmIyOS6DU53pPdLKXTd1pt+EqyvwyQE6H5EbNEHnasXmdA==',
-  region: 'us-east-1', 
+  accessKeyId: 'ASIA4ZTBS33DV5HDBRFM',
+  secretAccessKey: 'Iv+j4zLLuXRXu5fvF8YjVDnSAie/dO4zcbKXTi8H',
+  sessionToken: 'IQoJb3JpZ2luX2VjEHsaCXVzLXdlc3QtMiJGMEQCIH842b01nDm+tKqdECY+uWPGqrxcs+gX5gaDLDvWKmtrAiBjB6vgH3Z/nIsnTcs/ErkpgZFdJUf73LNoQakUKzEpsiqxAggUEAAaDDg3OTU5OTIxNDI3OSIM/v/fqk0kNNTbWsqPKo4CZPIxW6S81QxezHh2wB1Ndgu+mog+orzSWQHrIHDwBc1B5kPHs7vmBTVOGzsqXWihsm0M+GgUyxA9L2wavCLpCYtJ7Esf58oTf17v5JYK7QseVz7RGTADCmIRbQ9/qwUw9WkI7vPqivoJi6eBSrYgmYbOLvW8ztJq23t7EYHCd9JnbGEXbhuUi/C03QrwKROLxmPY9E6upERq4h/pRbDtJ/zZS9H2kWihyUI62nLuBsaxe74+AxZfy1dsWqyUatxixfiUTxqaOcke2sh/eJ/1rfl7qOLeLZf8mmkdLxiG4YbGSgGF87RpLUnOnocPsSNnsVezMnGzX+x7Odz0HjjUOlfQ/X8ltt3yBfzcZgX3MJOrqMAGOp4BiY0vSVKCTOPMFXaWfCja+9AXY1FnkJaHPqYgGWemQTT8nGWgfc8UAf/RqPZK6UMGuGtmMXdZoEdntbfIZbQBXRgCFzwQyvDtwl4RHDgsT1WcuiEe/ClpFbP6BQvoVIhC2oMIRdOsPOzQfVwKi0X1NpItBoLm1xw4dPregKj3fTGsc4aFjBlupQ5rkmz8Bn4TEQzHN3iOFILYEMFo3Kk=',
+  region: 'us-east-1', // ajuste para a sua região
   signatureVersion: 'v4',
 });
 

@@ -49,6 +49,10 @@ export default function Stack({ navigation }) {
           <Text style={styles.buttonText}>Lista de imagens</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Post')}>
+          <Text style={styles.buttonText}>Feed</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={[styles.button, styles.logoutButton, isPressed && styles.logoutButtonHover]}
           onPress={() => navigation.navigate('RealizarLogin')}
