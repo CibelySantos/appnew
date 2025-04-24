@@ -14,6 +14,8 @@ import UploadVideo from './src/screens/uploadVideos';
 import listarVideo from './src/screens/listaVideo';  
 import CadastroUsuario from './src/screens/cadastroUsuario';
 import SplashScreen from './src/screens/splashScreen';
+import Server from './src/screens/server';
+import ChatScreen from './src/screens/chatScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +35,8 @@ const app = () => (
       <Stack.Screen name="listarVideo" component={listarVideo} options={{ headerShown: false }}/>
       <Stack.Screen name="CadastroUsuario" component={CadastroUsuario} options={{ headerShown: false }}/>
       <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Server" component={Server} options={{ headerShown: false }} />
+      <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   </NavigationContainer>
 );
