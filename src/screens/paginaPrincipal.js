@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
-const backgroundImage = require('../../assets/backgroundpaginic.jpg');
+const backgroundImage = require('../assets/backgroundpaginic.jpg');
 
 export default function Stack({ navigation }) {
   const [isPressed, setIsPressed] = useState(false);

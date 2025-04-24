@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, ScrollView, Dimensions } from 'react-native';
 
-const backgroundImage = require('../../assets/backgroundpaginic.jpg'); 
+const backgroundImage = require('../assets/backgroundpaginic.jpg'); 
 
 const { width } = Dimensions.get('window');
 

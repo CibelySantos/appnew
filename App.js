@@ -13,12 +13,13 @@ import ListarImag from './src/screens/listarImag';
 import UploadVideo from './src/screens/uploadVideos';  
 import listarVideo from './src/screens/listaVideo';  
 import CadastroUsuario from './src/screens/cadastroUsuario';
+import SplashScreen from './src/screens/splashScreen';
 
 const Stack = createNativeStackNavigator();
 
 const app = () => (
   <NavigationContainer>
-    <Stack.Navigator initialRouteName="RealizarLogin" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="SplashScreen" >
       <Stack.Screen name="RealizarLogin" component={RealizarLogin} />
       <Stack.Screen name="PaginaPrincipal" component={PaginaPrincipal} />
       <Stack.Screen name="EditarPerfil" component={EditarPerfil} />
@@ -31,6 +32,7 @@ const app = () => (
       <Stack.Screen name="UploadVideo" component={UploadVideo} />
       <Stack.Screen name="listarVideo" component={listarVideo} />
       <Stack.Screen name="CadastroUsuario" component={CadastroUsuario} />
+      <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   </NavigationContainer>
 );

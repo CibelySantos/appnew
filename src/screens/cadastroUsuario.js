@@ -7,7 +7,7 @@ import { auth, db } from '../../firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { addDoc, collection } from 'firebase/firestore';
 
-const backgroundImage = require('../../assets/backgroundlogin.png');
+const backgroundImage = require('../assets/backgroundlogin.png');
 
 export default function CadastroUsuario({ navigation }) {
   const [email, setEmail] = useState('');

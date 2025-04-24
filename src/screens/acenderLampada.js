@@ -22,8 +22,8 @@ const LampadaScreen = () => {
 
       <Image
         source={lampadaAcesa 
-          ? require('../../assets/luzac.png') 
-          : require('../../assets/luzap.png')}
+          ? require('../assets/luzac.png') 
+          : require('../assets/luzap.png')}
         style={[styles.lampadaImagem, { width: imageSize, height: imageSize }]}
       />
 

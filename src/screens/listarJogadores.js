@@ -120,7 +120,7 @@ export default function App() {
 
   return (
     <ImageBackground
-      source={require('../../assets/backgroundpaginic.jpg')}
+      source={require('../assets/backgroundpaginic.jpg')}
       style={styles.background}
       resizeMode="cover"
     >

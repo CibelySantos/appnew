@@ -8,7 +8,7 @@ import { getAuth, updateEmail, updatePassword, reauthenticateWithCredential, Ema
 import { getFirestore, doc, updateDoc } from 'firebase/firestore';
 import app from '../../firebaseConfig';
 
-const backgroundImage = require('../../assets/backgroundpaginic.jpg');
+const backgroundImage = require('../assets/backgroundpaginic.jpg');
 const auth = getAuth(app);
 const firestore = getFirestore(app);
 

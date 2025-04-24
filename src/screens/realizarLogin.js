@@ -5,7 +5,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } 
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import app from '../../firebaseConfig';
 
-const backgroundImage = require('../../assets/backgroundlogin.png');
+const backgroundImage = require('../assets/fundoBranco.png');
 
 const RealizarLogin = ({ navigation }) => {
     const [email, setEmail] = useState('');

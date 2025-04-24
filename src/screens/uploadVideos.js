@@ -54,7 +54,7 @@ export default function UploadVideoScreen({ navigation }) {
 
   return (
     <ImageBackground 
-      source={require('../../assets/backgroundpaginic.jpg')} // Substitua pelo caminho da sua imagem ou URL
+      source={require('../assets/backgroundpaginic.jpg')} // Substitua pelo caminho da sua imagem ou URL
       style={styles.container}
     >
       <Text style={styles.titulo}>Upload de Vídeo</Text>
