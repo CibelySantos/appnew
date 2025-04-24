@@ -19,19 +19,19 @@ const Stack = createNativeStackNavigator();
 
 const app = () => (
   <NavigationContainer>
-    <Stack.Navigator initialRouteName="SplashScreen" >
-      <Stack.Screen name="RealizarLogin" component={RealizarLogin} />
-      <Stack.Screen name="PaginaPrincipal" component={PaginaPrincipal} />
-      <Stack.Screen name="EditarPerfil" component={EditarPerfil} />
-      <Stack.Screen name="SobreNos" component={SobreNos} />
-      <Stack.Screen name="AcenderLampada" component={AcenderLampada} />
-      <Stack.Screen name="ListarJogadores" component={ListarJogadores} />
-      <Stack.Screen name="CalcularIMC" component={CalcularIMC} />
-      <Stack.Screen name="UploadImag" component={UploadImag} />
-      <Stack.Screen name="ListarImag" component={ListarImag} />
-      <Stack.Screen name="UploadVideo" component={UploadVideo} />
-      <Stack.Screen name="listarVideo" component={listarVideo} />
-      <Stack.Screen name="CadastroUsuario" component={CadastroUsuario} />
+    <Stack.Navigator initialRouteName="SplashScreen" options={{ headerShown: false }}>
+      <Stack.Screen name="RealizarLogin" component={RealizarLogin} options={{ headerShown: false }}/>
+      <Stack.Screen name="PaginaPrincipal" component={PaginaPrincipal} options={{ headerShown: false }}/>
+      <Stack.Screen name="EditarPerfil" component={EditarPerfil} options={{ headerShown: false }}/>
+      <Stack.Screen name="SobreNos" component={SobreNos} options={{ headerShown: false }}/>
+      <Stack.Screen name="AcenderLampada" component={AcenderLampada} options={{ headerShown: false }}/>
+      <Stack.Screen name="ListarJogadores" component={ListarJogadores} options={{ headerShown: false }}/>
+      <Stack.Screen name="CalcularIMC" component={CalcularIMC} options={{ headerShown: false }}/>
+      <Stack.Screen name="UploadImag" component={UploadImag} options={{ headerShown: false }}/>
+      <Stack.Screen name="ListarImag" component={ListarImag} options={{ headerShown: false }} />
+      <Stack.Screen name="UploadVideo" component={UploadVideo} options={{ headerShown: false }}/>
+      <Stack.Screen name="listarVideo" component={listarVideo} options={{ headerShown: false }}/>
+      <Stack.Screen name="CadastroUsuario" component={CadastroUsuario} options={{ headerShown: false }}/>
       <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   </NavigationContainer>
