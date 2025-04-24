@@ -7,7 +7,7 @@ import EditarPerfil from './src/screens/editarPerfil';
 import CadastroUsuario from './src/screens/cadastroUsuario';
 import SplashScreen from './src/screens/splashScreen';
 import ChatScreen from './src/screens/chatScreen';
-import Chat from './src/screens/chat';
+import Chat from './src/screens/chatScreen';
 import Post from './src/screens/post';
 
 const Stack = createNativeStackNavigator();
